@@ -1,0 +1,2 @@
+1|Tylenol|5.99|500mg
+2|Prednisone|2.99|30mg
