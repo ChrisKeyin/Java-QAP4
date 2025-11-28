@@ -1,3 +1,5 @@
+--sql executed in pgAdmin for use in Java project.
+
 CREATE TABLE IF NOT EXISTS patient (
     patient_id      INT PRIMARY KEY,
     first_name      VARCHAR(50) NOT NULL,
