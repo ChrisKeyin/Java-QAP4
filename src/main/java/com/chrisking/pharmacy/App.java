@@ -7,6 +7,7 @@ public class App {
 
     private static final Scanner scanner = new Scanner(System.in);
     private static final DrugFileManager drugFileManager = new DrugFileManager();
+    private static final PatientDatabaseManager patientDatabaseManager = new PatientDatabaseManager();
 
     public static void main(String[] args) {
         boolean running = true;
@@ -18,12 +19,8 @@ public class App {
             switch (choice) {
                 case 1 -> handleSaveDrugToFile();
                 case 2 -> handleReadDrugsFromFile();
-                case 3 -> {
-                    System.out.println("Save Patient to database - coming soon.");
-                }
-                case 4 -> {
-                    System.out.println("Read Patients from database - coming soon.");
-                }
+                case 3 -> handleSavePatientToDatabase();
+                case 4 -> handleReadPatientsFromDatabase();
                 case 0 -> {
                     System.out.println("Exiting application. Goodbye!");
                     running = false;
@@ -45,7 +42,6 @@ public class App {
         System.out.println("4. Read all Patients from database");
         System.out.println("0. Exit");
     }
-
 
     private static void handleSaveDrugToFile() {
         System.out.println("--- Save Drug to File ---");
@@ -69,6 +65,32 @@ public class App {
             System.out.println("Drugs in file:");
             for (Drug drug : drugs) {
                 System.out.println(drug);
+            }
+        }
+    }
+
+    private static void handleSavePatientToDatabase() {
+        System.out.println("--- Save Patient to Database ---");
+
+        int id = readInt("Enter patient ID (integer): ");
+        String firstName = readString("Enter patient first name: ");
+        String lastName = readString("Enter patient last name: ");
+        String dob = readString("Enter patient date of birth (YYYY-MM-DD): ");
+
+        Patient patient = new Patient(id, firstName, lastName, dob);
+        patientDatabaseManager.insertPatient(patient);
+    }
+
+    private static void handleReadPatientsFromDatabase() {
+        System.out.println("--- Read Patients from Database ---");
+        List<Patient> patients = patientDatabaseManager.getAllPatients();
+
+        if (patients.isEmpty()) {
+            System.out.println("No patients found in database.");
+        } else {
+            System.out.println("Patients in database:");
+            for (Patient patient : patients) {
+                System.out.println(patient);
             }
         }
     }

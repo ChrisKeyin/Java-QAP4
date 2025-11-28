@@ -6,9 +6,9 @@ import java.util.List;
 
 public class PatientDatabaseManager {
 
-    private static final String URL = "jdbc:postgresql://localhost:5432/pharmacydb";
+    private static final String URL = "jdbc:postgresql://localhost:1508/pharmacydb";
     private static final String USER = "postgres";
-    private static final String PASSWORD = "your_password_here";
+    private static final String PASSWORD = "Vader10156$";
 
     public PatientDatabaseManager() {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD)) {
