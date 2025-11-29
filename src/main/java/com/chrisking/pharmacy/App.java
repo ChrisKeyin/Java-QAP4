@@ -33,7 +33,7 @@ public class App {
                     System.out.println("Exiting application. Goodbye!");
                     running = false;
                 }
-                default -> System.out.println("Invalid option. Please try again.");
+                default -> System.out.println("Invalid option, please try again.");
             }
 
             System.out.println();
