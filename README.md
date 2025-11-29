@@ -142,9 +142,10 @@ The patient is inserted into the `patient` table.
 
 ## Reflection
 
-This project helped me practice working with both file-based and database-backed persistence.  
-I implemented File I/O for the `Drug` entity and JDBC with PostgreSQL for the `Patient` entity.  
+This project helped me practice working with both file-based and database persistence.  
+I implemented File I/O for the Drug entity and JDBC with PostgreSQL for the Patient entity.  
 Configuring the database and making sure the SQL table matched the Java code was the main challenge, but once connected, the persistence operations and menu system worked smoothly.
+This project took around 6 hours to complete.
 
 
 ## Screenshots of running app:
