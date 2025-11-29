@@ -5,10 +5,18 @@ import java.util.Scanner;
 
 public class App {
 
+    // Single shared scanner for console input
     private static final Scanner scanner = new Scanner(System.in);
+
+    // Manager responsible for file operations related to Drug objects
     private static final DrugFileManager drugFileManager = new DrugFileManager();
+
+    // Manager responsible for database operations related to Patient objects
     private static final PatientDatabaseManager patientDatabaseManager = new PatientDatabaseManager();
 
+    /**
+     * Application entry point. Runs a loop displaying the menu and handling user choices.
+     */
     public static void main(String[] args) {
         boolean running = true;
 
@@ -34,6 +42,9 @@ public class App {
         scanner.close();
     }
 
+    /**
+     * Prints the main menu options to the console.
+     */
     private static void printMenu() {
         System.out.println("===== Pharmacy Menu =====");
         System.out.println("1. Save Drug to file");
@@ -43,6 +54,9 @@ public class App {
         System.out.println("0. Exit");
     }
 
+    /**
+     * Handles collecting input and saving a Drug to file.
+     */
     private static void handleSaveDrugToFile() {
         System.out.println("--- Save Drug to File ---");
 
@@ -55,6 +69,9 @@ public class App {
         drugFileManager.saveDrugToFile(drug);
     }
 
+    /**
+     * Reads all Drugs from file and prints them to the console.
+     */
     private static void handleReadDrugsFromFile() {
         System.out.println("--- Read Drugs from File ---");
         List<Drug> drugs = drugFileManager.readAllDrugsFromFile();
@@ -69,6 +86,9 @@ public class App {
         }
     }
 
+    /**
+     * Handles collecting input and inserting a Patient into the database.
+     */
     private static void handleSavePatientToDatabase() {
         System.out.println("--- Save Patient to Database ---");
 
@@ -81,6 +101,9 @@ public class App {
         patientDatabaseManager.insertPatient(patient);
     }
 
+    /**
+     * Reads all Patients from the database and prints them to the console.
+     */
     private static void handleReadPatientsFromDatabase() {
         System.out.println("--- Read Patients from Database ---");
         List<Patient> patients = patientDatabaseManager.getAllPatients();
@@ -95,6 +118,12 @@ public class App {
         }
     }
 
+    /**
+     * Reads an integer from the console, reprompting until a valid integer is entered.
+     *
+     * @param prompt the text to display to the user
+     * @return the parsed integer
+     */
     private static int readInt(String prompt) {
         while (true) {
             try {
@@ -107,6 +136,12 @@ public class App {
         }
     }
 
+    /**
+     * Reads a double value from the console, reprompting until a valid number is entered.
+     *
+     * @param prompt the text to display to the user
+     * @return the parsed double
+     */
     private static double readDouble(String prompt) {
         while (true) {
             try {
@@ -119,6 +154,12 @@ public class App {
         }
     }
 
+    /**
+     * Reads a string from the console and trims whitespace.
+     *
+     * @param prompt the text to display to the user
+     * @return the entered string
+     */
     private static String readString(String prompt) {
         System.out.print(prompt);
         return scanner.nextLine().trim();
