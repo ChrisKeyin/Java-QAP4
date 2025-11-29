@@ -145,3 +145,11 @@ The patient is inserted into the `patient` table.
 This project helped me practice working with both file-based and database-backed persistence.  
 I implemented File I/O for the `Drug` entity and JDBC with PostgreSQL for the `Patient` entity.  
 Configuring the database and making sure the SQL table matched the Java code was the main challenge, but once connected, the persistence operations and menu system worked smoothly.
+
+
+## Screenshots of running app:
+
+<img width="1920" height="1040" alt="SavedToFile" src="https://github.com/user-attachments/assets/e29ffe60-2e5d-4874-85ab-bb86194cfb36" />
+<img width="1920" height="1040" alt="SavedToData" src="https://github.com/user-attachments/assets/920c0323-a97f-4126-b5d9-c245d77f0aa1" />
+<img width="1920" height="1040" alt="ReadFromDataP2" src="https://github.com/user-attachments/assets/dcebf598-25b4-4396-9c8f-a9edd56e8fd8" />
+
